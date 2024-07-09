@@ -5,7 +5,7 @@ async function login(request, response) {
 
     const query = "SELECT email, password FROM users WHERE email = ?";
 
-    connection.query(query, email, (err, results) => {
+    connection.query(query, email, (err, results) => {        
         if (results.length > 0) {
             const password = request.body.password;
             const passwordQuery = results[0].password;
